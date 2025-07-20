@@ -24,6 +24,3 @@ const ToastMessage = ({ message, severity, open }) => {
 };
 
 export default ToastMessage;
-
-
-//You will get in drive file this code
