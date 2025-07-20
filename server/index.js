@@ -2,6 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import * as dotenv from 'dotenv';
+import UserRouter from "./routes/User.js";
+import ProductRoutes from "./routes/Products.js";
 dotenv.config() ;
 
 const app = express() ;
@@ -24,6 +26,9 @@ app.get("/", async (req, res) => {
         message: "Server is running" 
     }) ;
 })
+
+app.use("/api/user/", UserRouter);
+app.use("/api/products/", ProductRoutes);
 
 const connectDB = () => {
 
